@@ -1,0 +1,223 @@
+@import "../../../mixins.scss";
+
+.post {
+  border: 1px solid var(--theme-color);
+  box-shadow: 1px 1px 10px gray;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #fff;
+
+  @include sm {
+    padding: 10px;
+  }
+
+  .user {
+    .lazy-load-image-background {
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+
+        object-fit: cover;
+        @include sm {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .post-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .user {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .details {
+        .name {
+          font-weight: 600;
+
+          @include sm {
+            font-size: 0.9rem;
+          }
+        }
+
+        .time {
+          font-size: 0.8em;
+          color: gray;
+
+          @include sm {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+
+    .delete-icon {
+      cursor: pointer;
+      font-size: "inherit";
+      color: red;
+      font-size: 1.5em;
+      padding: 2px;
+      outline: 1px dashed red;
+      border-radius: 4px;
+      opacity: 0.6;
+    }
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .lazy-load-image-background {
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+
+        @include md {
+          aspect-ratio: 1;
+        }
+
+        @include sm {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .post-text {
+      font-weight: 400;
+      // font-size: 1.2em;
+      word-break: break-word;
+
+      @include sm {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .actions-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    color: gray;
+
+    @include sm {
+      margin-top: 5px;
+    }
+
+    .likes {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      .like-icon {
+        font-size: 1.2em;
+        padding-top: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .count {
+      font-size: 0.9em;
+
+      @include sm {
+        font-size: 0.7em;
+      }
+    }
+
+    .comments-count {
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .add-comment {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+
+    @include sm {
+      margin-top: 5px;
+    }
+
+    form {
+      flex: 1;
+      display: flex;
+      gap: 10px;
+
+      input[type="text"] {
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 1.2em;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        outline: none;
+
+        &::placeholder {
+          opacity: 0.4;
+        }
+
+        &:focus {
+          border: 1px solid gray;
+        }
+
+        @include md {
+          font-size: 1em;
+        }
+
+        @include sm {
+          font-size: 0.8em;
+        }
+      }
+
+      input[type="submit"] {
+        padding: 5px 15px;
+        background-color: var(--theme-color);
+        outline: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          transform: scale(1);
+        }
+
+        @include md {
+          font-size: 1em;
+        }
+
+        @include sm {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .comments-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

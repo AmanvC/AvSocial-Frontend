@@ -1,0 +1,13 @@
+@import "../../mixins.scss";
+
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px;
+
+  @include sm {
+    padding: 10px;
+  }
+}
