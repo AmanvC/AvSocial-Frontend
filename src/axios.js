@@ -6,7 +6,7 @@ export const makeRequest = () => {
   const token = getItemFromLocalStorage(LOCALSTORAGE_TOKEN_KEY);
 
   return axios.create({
-    baseURL: "https://avsocial-media.onrender.com/api/v1",
+    baseURL: "https://avsocial-media-api.onrender.com/api/v1",
     headers: {
       authorization: "Bearer " + token,
     },
