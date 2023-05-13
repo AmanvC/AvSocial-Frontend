@@ -84,7 +84,7 @@ const PendingRequests = () => {
                 <Img
                   src={
                     request?.sentBy?.profileImage
-                      ? `/uploads/${request?.sentBy?.profileImage}`
+                      ? request?.sentBy?.profileImage
                       : NoUserImage
                   }
                   className="user-image"

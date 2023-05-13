@@ -37,7 +37,7 @@ const Story = ({ story }) => {
             <span className="text">{story.user.firstName}</span>
             <span className="text">{story.user.lastName}</span>
           </div>
-          <Img src={`/uploads/${story.image}`} />
+          <Img src={story.image} />
         </div>
       ) : (
         <div className="show-story-wrapper">
@@ -47,7 +47,7 @@ const Story = ({ story }) => {
                 className="user-image"
                 src={
                   story.user.profileImage
-                    ? `/uploads/${story.user.profileImage}`
+                    ? story.user.profileImage
                     : NoUserImage
                 }
               />
@@ -63,7 +63,7 @@ const Story = ({ story }) => {
             <span className="close" onClick={() => setShowStory(false)}>
               ✖
             </span>
-            <Img className="view-story" src={`/uploads/${story.image}`} />
+            <Img className="view-story" src={story.image} />
             {currentUser._id === story.user._id && (
               <button
                 className="delete"

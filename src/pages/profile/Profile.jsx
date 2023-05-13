@@ -164,9 +164,7 @@ const Profile = () => {
             <Img
               className="cover-image"
               src={
-                userProfile.coverImage
-                  ? `/uploads/${userProfile.coverImage}`
-                  : NoCoverImage
+                userProfile.coverImage ? userProfile.coverImage : NoCoverImage
               }
               style={{ backgroundColor: "white" }}
             />
@@ -174,7 +172,7 @@ const Profile = () => {
               className="profile-image"
               src={
                 userProfile.profileImage
-                  ? `/uploads/${userProfile.profileImage}`
+                  ? userProfile.profileImage
                   : NoUserImage
               }
               style={{ backgroundColor: "white" }}
@@ -263,7 +261,7 @@ const Profile = () => {
                     src={
                       uploadedProfileImage
                         ? URL.createObjectURL(uploadedProfileImage)
-                        : `/uploads/${userProfile.profileImage}`
+                        : userProfile.profileImage
                     }
                     style={{
                       lineHeight: 9,
@@ -289,7 +287,7 @@ const Profile = () => {
                     src={
                       uploadedCoverImage
                         ? URL.createObjectURL(uploadedCoverImage)
-                        : `/uploads/${userProfile.coverImage}`
+                        : userProfile.coverImage
                     }
                     style={{
                       lineHeight: 9,
