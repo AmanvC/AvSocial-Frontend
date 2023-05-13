@@ -67,7 +67,7 @@ const Post = ({ post }) => {
     },
     onSuccess: (res) => {
       toast.success(res?.data?.message || "Post deleted successfully.");
-      queryClient.invalidateQueries(["posts", "infinite", currentUser._id]);
+      queryClient.invalidateQueries(["posts"]);
     },
     onError: (err) => {
       toast.error(err.response.data.message);
