@@ -45,6 +45,7 @@ const Share = ({ setTimestamp, updatePostsList }) => {
       updatePostsList();
       setLoading(false);
     } catch (err) {
+      setLoading(false);
       toast.error("Something went wrong while creating a new Post!");
     }
   };

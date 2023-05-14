@@ -33,7 +33,6 @@ const PendingRequests = () => {
 
   const requestsMutation = useMutation(
     ([action, userId]) => {
-      console.log(action);
       if (action === "delete") {
         return makeRequest().delete("/relationship/delete", {
           data: { user_id: userId },
